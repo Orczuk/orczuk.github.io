@@ -5,7 +5,7 @@
 fetch('data.json')
     .then(response => response.json()) // Parse the JSON response
     .then(data => {
-        const sliders = ["slider", "slider2"];
+        const sliders = ["slider", "slider2", "slider3"];
         for(var j = 0; j < sliders.length; j++){
           for(var i = j*5; i < j*5+5; i++){
           // Get the target element
@@ -14,7 +14,7 @@ fetch('data.json')
           const cardElement = document.createElement('div');
             cardElement.className = 'card';
             cardElement.id = 'card';
-    
+                
           const columnElement = document.createElement('div');
     
           // Set the class or any other attributes for the column element
@@ -23,12 +23,25 @@ fetch('data.json')
     
     
           // Create name and attach it from Json
-          const nameElement = document.createElement('title-overlay');
-          nameElement.innerText = data[i].name;
+          //const nameElement = document.createElement('title-overlay');
+          //nameElement.innerText = data[i].name;
           
-          // Create price and attach it form Json 
-          const priceElement = document.createElement('price');
-          priceElement.innerText = data[i].price;
+          // Create price and attach it form Json
+            const priceElement = document.createElement("titleText");
+            
+            // Set color based on if it's full price, on sale or coming soon
+            if(j < 1){
+              priceElement.innerText = data[i].price;
+              cardElement.style.background = "linear-gradient(to bottom, #1b2838, #171a21)";
+            }
+            else if(j >= 1 && j < 2){
+              priceElement.innerText = data[i].price;
+              cardElement.style.background = "linear-gradient(to bottom, #4c6b22, #171a21)";
+            }
+            else {
+              priceElement.innerText = data[i].date;
+              cardElement.style.background = "linear-gradient(to bottom, #247aa1, #171a21)";
+            }
     
           // Create a 
           const aElement = document.createElement('a');
@@ -52,7 +65,7 @@ fetch('data.json')
           buttonImageElement.alt = "https://i2.wp.com/www.oceansdigitalgame.com/wp-content/uploads/2019/01/steam-store-badge.png?ssl=1";
     
           // Append the name 
-          columnElement.appendChild(nameElement);
+          //columnElement.appendChild(nameElement);
           // Append the name 
           columnElement.appendChild(priceElement);
           // Append the image element to the anchor element

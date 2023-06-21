@@ -43,6 +43,19 @@ body {
   height: auto; /* Maintain aspect ratio */
 }
 
+.card titleText{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(to top, white, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 20px;
+}
+
 .card desc{
   display: -webkit-box;
   -webkit-box-orient: vertical;
