@@ -1,100 +1,110 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html>
 
-    <!-- ===== Link Swiper's CSS ===== -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<head>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1, 
+         maximum-scale = 1, minimum-scale = 1, user-scalable = no, minimal-ui" />
+  <meta name = "apple-mobile-web-app-capable" content = "yes" />
+  <meta name = "apple-mobile-web-app-status-bar-style" content = "black" />
+  <title>Indie FanGamer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel = "stylesheet"
+        href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.min.css" />
+  <link rel = "stylesheet"
+        href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- ===== Fontawesome CDN Link ===== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<body>
+<div class = "views">
+  <div class = "view view-main">
+    <div class = "pages">
+      <div data-page = "home" class = "page navbar-fixed">
 
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="style.css" />
+        <header class="banner">
+          <h1>Indie FanGamer</h1>
+          <div class="button-container">
+            <form action="https://store.steampowered.com/franchise/IndieGameFan/" method="get" target="_blank">
+            <button class="buttonB">Steam</button>
+            </form>
+            <form action="https://discord.gg/Tg3U47vuDP" method="get" target="_blank">
+            <button class="buttonB">Discord</button>
+            </form>
+          </div>
+        </header>
 
-    <title>IndieGameFan</title>
-  </head>
-  <body>
-  
-  <div class="banner">
-    <img class="banner-image" src="images/banner.png" alt="banner.png">
-  </div>
+        
+        <div class = "page-content">
+          <h2 class="subtitle">Top Upcoming Games This Week</h2>
+          <div class = "swiper-container swiper-1">
+            <div class = "swiper-wrapper"  id="swiper-wrapper1">
+              <!--- Example of What it looked like 
+              <div class="swiper-slide" style="background: linear-gradient(to bottom, #4e5c6b, #171a21)">
 
-  <div class="row">
-    <a href="https://steamcommunity.com/linkfilter/?url=https://discord.gg/Tg3U47vuDP" class="image-button">
-      <img src="https://user-images.githubusercontent.com/31022056/158916278-4504b838-7ecb-4ab9-a900-7dc002aade78.png" alt="https://user-images.githubusercontent.com/31022056/158916278-4504b838-7ecb-4ab9-a900-7dc002aade78.png">
-    </a>
-    <a href="https://store.steampowered.com/franchise/IndieGameFan/" class="image-button">
-      <img src="https://abyteentertainment.com/wp-content/uploads/2019/01/steambadge.png" alt="Button Image">
-    </a>
-  </div>  
-  
-  <div class="container" id="body"></div>
-    
-    <!-- Swiper JS -->
-    <script src="loadCardScript.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3.25,
-        spaceBetween: 30,
-        slidesPerGroup: 1,
-        loop: false,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-  </body>
-</html>
+                <div class="image">
+                  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1371720/hero_capsule.jpg" alt="" />
+                </div>
+
+                <div class="description">
+                  <span class="desc">The Stanley Parable: Ultra Deluxe is an expanded re-imagining of 2013's The Stanley Parable. You will play as Stanley, and you will not play as Stanley. You will make a choice, and you will become powerless. You are not here to win. The Stanley Parable is a game that plays you.</span>
+                </div>
+                
+                <div class="button">
+                  <form action="https://www.w3docs.com/" method="get" target="_blank">
+                  <button class="linkToSteam">
+                      <span class="price">
+                        <span class="old-price">$24.99</span>
+                        <span class="new-price">$11.99</span>
+                      </span>
+                    <img src="images/steamBadge.png" alt="Button Image">
+                  </button>
+                  </form>
+                </div>
+              </div>
+              -->
+            </div>
+          </div>
+
+          <h2 class="subtitle">Top Upcoming Games This Month</h2>
+          <div class = "swiper-container swiper-2">
+            <div class = "swiper-wrapper" id="swiper-wrapper2"></div>
+          </div>
+
+          <h2 class="subtitle">Featured Upcoming Games</h2>
+          <div class = "swiper-container swiper-3">
+            <div class = "swiper-wrapper" id="swiper-wrapper3"></div>
+          </div>
+
+          <h2 class="subtitle">Top Free Games This Week</h2>
+          <div class = "swiper-container swiper-4">
+            <div class = "swiper-wrapper"  id="swiper-wrapper4"></div>
+          </div>
+
+          <h2 class="subtitle">Top Games on Sale This Week</h2>
+          <div class = "swiper-container swiper-5">
+            <div class = "swiper-wrapper" id="swiper-wrapper5"></div>
+          </div>
+
+          <h2 class="subtitle">Top Full Priced Games This Week</h2>
+          <div class = "swiper-container swiper-6">
+            <div class = "swiper-wrapper" id="swiper-wrapper6">\</div>
+          </div>
+
+          <div class="fa-container">
+            <!-- Social media icons -->
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+          </div>
 
 
-<!-- What A Body Looks Like 
- <div>
-   <h2 class="title">Subsection Title2</h2>
- </div>
- <section>
-
-   <div class="swiper mySwiper">
-     <div class="swiper-wrapper content" id="swiper-wrapper content2">
-     </div>
-   </div>
-
-   <div class="swiper-pagination swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-   <div class="swiper-button-prev"></div>
- </section>
- -->
-
-<!---
-This is how the card looks like in HTML 
-
-<div class="swiper-slide card">
-  <div class="card-content">
-    
-    <div class="image">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1371720/hero_capsule.jpg" alt="" />
-    </div>
-
-    <div class="description">
-      <span class="desc">The Stanley Parable: Ultra Deluxe is an expanded re-imagining of 2013's The Stanley Parable. You will play as Stanley, and you will not play as Stanley. You will make a choice, and you will become powerless. You are not here to win. The Stanley Parable is a game that plays you.</span>
-    </div>
-
-    <div class="button">
-      <button class="linkToSteam">
-         $11.99
-        <img src="images/steambadge2.png" alt="Button Image">
-      </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
--->
+
+<script type = "text/javascript"
+        src = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js"></script>
+<script src = "swiperScript.js" ></script>
+</body>
+</html>

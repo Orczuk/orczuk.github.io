@@ -1,162 +1,201 @@
-/* === Google Font Import - Poppins === */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+/*======================================================================================================================
+BANNER CSS
+======================================================================================================================*/
+.banner {
+    background-color: #171a21;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-body{
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: #f2f2f2;
+.header {
+    margin: 0;
 }
 
-section{
-  position: relative;
-  display: flex;
-  align-items: center;
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.buttonB {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*======================================================================================================================
+Main Page CSS
+======================================================================================================================*/
+
+.page-content {
+    height: calc(100vh - 15%);
+    overflow-y: scroll;
+    /* Additional styles for the content */
+    background:radial-gradient(circle,#40658f, #171a21 );
 }
 
-.swiper{
-  width: 950px;
+/*======================================================================================================================
+Subtitles CSS
+======================================================================================================================*/
+
+.subtitle {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* Add more styles as needed */
 }
 
-.card{
-  position: relative;
-  background: radial-gradient(circle,#171a21, #171a21);
-  border-radius: 20px;
-  margin: 20px 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+/*======================================================================================================================
+Swiper CSS
+======================================================================================================================*/
+
+.swiper-container {
+    position: relative;
+    height: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
 }
 
-.card::before{
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  height: 60%;
-  width: 100%;
-  background: linear-gradient(to bottom, #171a21, #171a21);
-  border-radius: 0px 0px 20px 20px;
+.swiper-slide {
+    background:linear-gradient(to bottom,#171a21, #171a21 50%);
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+    text-align:center;
+    height: 100%;
 }
 
-.card .card-content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-  position: relative;
-  z-index: 100;
+.image{
+    height: 60%;
+    width: auto;
+    border-radius: 20px;
+    padding: 3px;
+    background: linear-gradient(to bottom, #247aa1, #171a21);
 }
 
-section .card .image{
-  height: 60%;
-  width: auto;
-  border-radius: 8%;
-  padding: 4px;
-  background: linear-gradient(to bottom, #247aa1, #171a21);
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #1b2838;
 }
 
-section .card .image img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8%;
-  border: 3px solid #1b2838;
-}
-
-.card .description{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  color: white;
-}
-
-.old-price {
-  text-decoration: line-through;
-  font-size: 10px;
-  display: block;
-}
-
-.new-price {
-  display: block;
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4px;
+    color: white;
 }
 
 .description .desc{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-  background: linear-gradient(to top, transparent, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(to top, transparent, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 60px;
 }
 
-.card .button{
-  width: 100%;
-  justify-content: space-around;
-  margin-top: 20px;
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.card .button button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  outline: none;
-  border: none;
-  color: gray;
-  padding: 8px 22px;
-  border-radius: 4px;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  flex-direction: row;
-  width: 100%;
+.old-price {
+    font-size: 0.5em; /* Adjust the size as needed */
+    text-decoration: line-through;
 }
 
-.card .button img {
-  margin-right: 2px;
-  margin-left: 5px;
-  height: 32px; /* Set the height of the image */
-  width: 32px; /* Maintain aspect ratio */
+ .button{
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+}
+
+ .button button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: gray;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.button img {
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 32px;
+    width: 32px;
 }
 
 .button button:hover{
-  background: linear-gradient(to right, #75b022, #588a1b);
-  color: white;
+    background: linear-gradient(to right, #75b022, #588a1b);
+    color: white;
 }
 
-.swiper-pagination{
-  position: absolute;
+/*======================================================================================================================
+Footer CSS
+======================================================================================================================*/ 
+.fa-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #171a21;
+    padding: 10px;
 }
 
-.swiper-pagination-bullet{
-  height: 7px;
-  width: 26px;
-  border-radius: 50px;
-  background: #247aa1;
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
-.swiper-button-next, .swiper-button-prev{
-  opacity: 0.7;
-  color:  #247aa1;
-  transition: all 0.3s ease;
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
 }
-.swiper-button-next:hover, .swiper-button-prev:hover{
-  opacity: 1;
-  color:  #247aa1;
+
+/* Set a specific color for each brand */
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
 }
