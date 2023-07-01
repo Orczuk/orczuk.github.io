@@ -133,7 +133,7 @@ fetch('data.json')
                 button.appendChild(buttonImage);
                 buttonDiv.appendChild(button);
 
-// Append the elements to their respective parents
+                // Append the elements to their respective parents
                 descriptionDiv.appendChild(description);
                 imageDiv.appendChild(image);
 
