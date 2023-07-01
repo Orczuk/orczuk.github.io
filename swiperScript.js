@@ -36,10 +36,19 @@ var swiperConfigs = [
 var i = -1;
 // Goes through all of the swipers 
 swiperConfigs.forEach(function(config) {
+    var cards = 1;
+    // Function to handle different logic based on the device
+    if (isMobileDevice()) {
+        cards = 1;
+    } else {
+        cards = 4.5;
+    }
+    
+    
     var swiper = myApp.swiper(config.selector, {
         pagination: config.selector + ' .swiper-pagination',
         spaceBetween: config.spaceBetween,
-        slidesPerView: config.slidesPerView,
+        slidesPerView: cards,
         direction: config.direction || 'horizontal',
         speed: config.speed || 300,
         loop: true,
@@ -133,4 +142,10 @@ swiperConfigs.forEach(function(config) {
             console.log('Error:', error);
         });
 });
+
+// Function to check if user is on a mobile device
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
 
