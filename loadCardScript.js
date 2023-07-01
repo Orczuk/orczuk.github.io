@@ -56,7 +56,7 @@ fetch('data.json')
             container.appendChild(section);
         }
         
-        for(var j = 0; j < 3; j++){
+        for(var j = 0; j < titles.length; j++){
             for(var i = j*5; i < j*5+5; i++){
                 // Get the swiper-wrapper content element
                 var swiperWrapper = document.getElementById(titles[j]);
