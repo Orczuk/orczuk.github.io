@@ -89,7 +89,7 @@ fetch('data.json')
                 button.classList.add("linkToSteam");
 
                 var buttonImage = document.createElement("img");
-                buttonImage.src = "images/steambadge2.png";
+                buttonImage.src = "images/steamBadge.png";
 
                 // Create hyperlink for the button
                 var buttonLink = document.createElement("a");
