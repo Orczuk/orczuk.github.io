@@ -9,16 +9,17 @@
 }
 
 body{
-  height: 100vh;
+  height: 200vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background: #f2f2f2;
 }
 
 section{
   position: relative;  
-  height: 450px;
+  height: 500px;
   width: 1075px;
   display: flex;
   align-items: center;
@@ -30,7 +31,7 @@ section{
 
 .card{
   position: relative;
-  background: linear-gradient(to bottom,#171a21, #171a21);
+  background: radial-gradient(circle,#171a21, #171a21);
   border-radius: 20px;
   margin: 20px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -40,10 +41,11 @@ section{
 .card::before{
   content: "";
   position: absolute;
-  height: 40%;
+  bottom: 0px;
+  height: 60%;
   width: 100%;
-  background: linear-gradient(to bottom, #247aa1, #171a21);
-  border-radius: 20px 20px 0 0;
+  background: linear-gradient(to bottom, #171a21, #171a21);
+  border-radius: 0px 0px 20px 20px;
 }
 
 .card .card-content{
@@ -59,7 +61,7 @@ section .card .image{
   height: 60%;
   width: auto;
   border-radius: 8%;
-  padding: 3px;
+  padding: 4px;
   background: linear-gradient(to bottom, #247aa1, #171a21);
 }
 
@@ -81,11 +83,11 @@ section .card .image img{
 
 .old-price {
   text-decoration: line-through;
+  font-size: 10px;
   display: block;
 }
 
 .new-price {
-  font-weight: bold;
   display: block;
 }
 
@@ -134,7 +136,6 @@ section .card .image img{
   background: linear-gradient(to right, #75b022, #588a1b);
   color: white;
 }
-
 
 .swiper-pagination{
   position: absolute;

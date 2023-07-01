@@ -5,13 +5,13 @@
 fetch('data.json')
     .then(response => response.json()) // Parse the JSON response
     .then(data => {
-        const sliders = ["swiper-wrapper content", "swiper-wrapper content2", "swiper-wrapper content3"];
+        const sliders = ["swiper-wrapper content", "swiper-wrapper content2"];
         for(var j = 0; j < sliders.length; j++){
             for(var i = j*5; i < j*5+5; i++){
                 // Get the swiper-wrapper content element
-                var swiperWrapper = document.getElementById("swiper-wrapper content");
+                var swiperWrapper = document.getElementById(sliders[j]);
 
-// Create the necessary HTML elements
+                // Create the necessary HTML elements
                 var swiperSlide = document.createElement("div");
                 swiperSlide.classList.add("swiper-slide", "card");
 
@@ -41,7 +41,7 @@ fetch('data.json')
                 var buttonImage = document.createElement("img");
                 buttonImage.src = "images/steambadge2.png";
 
-// Create hyperlink for the button
+                // Create hyperlink for the button
                 var buttonLink = document.createElement("a");
                 buttonLink.href = data[i].link;
                 buttonLink.target = "_blank";
@@ -57,10 +57,15 @@ fetch('data.json')
                 if(currentDate < parsedGivenDate){
                     var price = document.createTextNode(gameDate);
                     buttonLink.appendChild(price);
+                    swiperSlide.style.background = "linear-gradient(to bottom, #247aa1, #171a21)";
+                    imageDiv.style.background = "linear-gradient(to bottom, #247aa1, #171a21)";
                 }
                 else if (initialPrice === null || initialPrice === "") {
                     var price = document.createTextNode(finalPrice);
                     buttonLink.appendChild(price);
+                    swiperSlide.style.background = "linear-gradient(to bottom, #4e5c6b, #171a21)";
+                    imageDiv.style.background = "linear-gradient(to bottom, #4e5c6b, #171a21)";
+                    
                 } else {
                     var oldPrice = document.createElement("span");
                     oldPrice.className = "old-price";
@@ -70,6 +75,8 @@ fetch('data.json')
                     newPrice.innerText = finalPrice;
                     buttonLink.appendChild(oldPrice);
                     buttonLink.appendChild(newPrice);
+                    swiperSlide.style.background = "linear-gradient(to bottom, #4c6b22, #171a21)";
+                    imageDiv.style.background = "linear-gradient(to bottom, #4c6b22, #171a21)";
                 }
                 button.appendChild(buttonLink);
 
@@ -86,6 +93,7 @@ fetch('data.json')
 
                 swiperSlide.appendChild(cardContent);
                 swiperWrapper.appendChild(swiperSlide);
+                
             }
         }
     })

@@ -19,13 +19,26 @@
   <body>
     <section>
       
-      <div class="swiper mySwiper container">
+      <div class="swiper mySwiper">
         <div class="swiper-wrapper content" id="swiper-wrapper content">
       </div>
       </div>
 
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination swiper-pagination1"></div>
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
+    </section>
+
+    <section>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper content" id="swiper-wrapper content2">
+        </div>
+      </div>
+
+      <div class="swiper-pagination swiper-pagination"></div>
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
     </section>
 
     <!-- Swiper JS -->
@@ -35,10 +48,10 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
+        slidesPerView: 3.25,
         spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
+        slidesPerGroup: 1,
+        loop: false,
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
@@ -56,8 +69,7 @@
 
 <!---
 This is how the card looks like in HTML 
-     <div class="swiper mySwiper container">
-        <div class="swiper-wrapper content" id="swiper-wrapper content">
+
 <div class="swiper-slide card">
   <div class="card-content">
     
@@ -71,12 +83,10 @@ This is how the card looks like in HTML
 
     <div class="button">
       <button class="linkToSteam">
-         <span class="old-price">$24.99</span> <span class="new-price">$11.99</span>
+         $11.99
         <img src="images/steambadge2.png" alt="Button Image">
       </button>
     </div>
   </div>
 </div>
-      </div>
-      </div>
 -->
