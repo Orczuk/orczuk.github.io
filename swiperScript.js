@@ -106,7 +106,7 @@ swiperConfigs.forEach(function(config) {
                         "                      <span class=\"price\">\n" +
                         "                        <span class=\"new-price\">" + data[j].final + "</span>\n" +
                         "                      </span>\n" +
-                        "                    <img src=\"images/steamBadge.png\" alt=\"Button Image\">\n" +
+                        "                    <img src=\"https://github.com/Orczuk/orczuk.github.io/blob/master/images/steambadge.png?raw=true\" alt=\"Button Image\">\n" +
                         "                  </button>\n" +
                         "                  </form>\n" +
                         "                </div>\n" +
@@ -130,7 +130,7 @@ swiperConfigs.forEach(function(config) {
                         "                        <span class=\"old-price\">" + data[j].initial + "</span>\n" +
                         "                        <span class=\"new-price\">" + data[j].final + "</span>\n" +
                         "                      </span>\n" +
-                        "                    <img src=\"images/steamBadge.png\" alt=\"Button Image\">\n" +
+                        "                    <img src=\"https://github.com/Orczuk/orczuk.github.io/blob/master/images/steambadge.png?raw=true\" alt=\"Button Image\">\n" +
                         "                  </button>\n" +
                         "                  </form>\n" +
                         "                </div>\n" +
