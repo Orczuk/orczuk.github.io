@@ -5,11 +5,61 @@
 fetch('data.json')
     .then(response => response.json()) // Parse the JSON response
     .then(data => {
-        const sliders = ["swiper-wrapper content", "swiper-wrapper content2"];
-        for(var j = 0; j < sliders.length; j++){
+
+        const titles = ["Top Upcoming Games This Week", "Top Upcoming Games This Month",
+        "Featured Upcoming Games", "Top Free Games This Week", "Top Games on Sale This Week",
+        "Top Full Priced Games This Week"];
+        
+        // JavaScript code
+        const container = document.getElementById("body");
+
+        for (let i = 0; i <= titles.length; i++) {
+            // Create the <div> element
+            const div = document.createElement("div");
+
+            // Create the <h2> element
+            const h2 = document.createElement("h2");
+            h2.classList.add("title");
+            h2.textContent = titles[i];
+
+            // Append the <h2> element to the <div> element
+            div.appendChild(h2);
+
+            // Append the <div> element to the container
+            container.appendChild(div);
+
+            // Create the <section> element
+            const section = document.createElement("section");
+
+            // Create the swiper elements
+            const swiperDiv = document.createElement("div");
+            swiperDiv.classList.add("swiper", "mySwiper");
+
+            const swiperWrapperDiv = document.createElement("div");
+            swiperWrapperDiv.classList.add("swiper-wrapper", "content");
+            swiperWrapperDiv.id = titles[i];
+
+            // Append the swiper wrapper to the swiper container
+            swiperDiv.appendChild(swiperWrapperDiv);
+
+            // Append the swiper container to the section
+            section.appendChild(swiperDiv);
+
+            // Create the pagination element
+            const paginationDiv = document.createElement("div");
+            paginationDiv.classList.add("swiper-pagination", "swiper-pagination" + i);
+
+            // Append the pagination element to the section
+            section.appendChild(paginationDiv);
+
+            // Append the section to the container
+            container.appendChild(section);
+        }
+        
+        for(var j = 0; j < 3; j++){
             for(var i = j*5; i < j*5+5; i++){
                 // Get the swiper-wrapper content element
-                var swiperWrapper = document.getElementById(sliders[j]);
+                var swiperWrapper = document.getElementById(titles[j]);
 
                 // Create the necessary HTML elements
                 var swiperSlide = document.createElement("div");
