@@ -77,20 +77,6 @@ swiperConfigs.forEach(function(config) {
         loopAdditionalSlides: 30,
         centeredSlides: true
     });
-    
-    fetch('http://store.steampowered.com/api/appdetails?appids=1313140', {
-        cors: {
-            origin: ["https://orczuk.github.io", "http://store.steampowered.com"], methods: "GET,HEAD,PUT,PATCH,DELETE",},
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Process the API response
-            console.log(data);
-        })
-        .catch(error => {
-            // Handle any errors
-            console.error(error);
-        });
 
     // Pulls the data 
     fetch('data.json')
@@ -127,8 +113,14 @@ swiperConfigs.forEach(function(config) {
                         "              </div>");
                 }
                 // The Game is Full Price 
-                    
-                else if (initialPrice === null || initialPrice === "") {
+                else if (initialPrice === null || initialPrice === "" || data[j].is_free){
+                    var price = "";
+                    if(data[j].is_free){
+                        price = "FREE";
+                    }
+                    else{
+                      price = data[j].final;  
+                    }
                     swiper.appendSlide("<div class=\"swiper-slide\"  style=\"background: linear-gradient(to bottom, #4e5c6b, #171a21 50%)\">\n" +
                         "                <div class=\"image\"  style=\"background: linear-gradient(to bottom, #4e5c6b, #171a21 50%)\">\n" +
                         "                  <img src=\"" + data[j].image + "\" alt=\"\" />\n" +
@@ -140,7 +132,7 @@ swiperConfigs.forEach(function(config) {
                         "                  <form action=\"" + data[j].link + "\" method=\"get\" target=\"_blank\">\n" +
                         "                  <button class=\"linkToSteam\">\n" +
                         "                      <span class=\"price\">\n" +
-                        "                        <span class=\"new-price\">" + data[j].final + "</span>\n" +
+                        "                        <span class=\"new-price\">" + price + "</span>\n" +
                         "                      </span>\n" +
                         "                  </button>\n" +
                         "                  </form>\n" +
@@ -184,5 +176,3 @@ swiperConfigs.forEach(function(config) {
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
-
-
