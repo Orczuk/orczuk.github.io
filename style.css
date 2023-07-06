@@ -8,7 +8,7 @@ Fonts CSS
 }
 
 /* Media query for mobile devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 200px) {
     .center-button-container {
         margin-top: 10px; /* Adjust the value as needed */
     }
@@ -130,11 +130,11 @@ Swiper CSS
 .swiper-container {
     position: relative;
     height: auto;
-    width: 90%;
+    width: auto;
     display: flex;
     align-items: center;
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .swiper-slide {
@@ -147,11 +147,23 @@ Swiper CSS
 
 .swiper-pagination {
     position: absolute;
-    bottom: 15px; /* Adjust the bottom value as needed */
     left: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 95%;
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 8px;
+    --swiper-pagination-top: auto;
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
 }
 
 /*======================================================================================================================
@@ -186,7 +198,7 @@ Cards CSS
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    font-family: Arial, sans-serif;
+    font-family: "Super Indie", sans-serif;
     overflow: hidden;
     background: linear-gradient(to top, transparent, white);
     -webkit-background-clip: text;

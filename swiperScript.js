@@ -3,32 +3,50 @@ var myApp = new Framework7();
 var swiperConfigs = [
     {
         selector: '.swiper-1',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-1',
+        next: '.swiper-button-next-1',
+        prev: '.swiper-button-prev-1',
+        slidesPerView: 3,
         spaceBetween: 30
     },
     {
         selector: '.swiper-2',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-2',
+        next: '.swiper-button-next-2',
+        prev: '.swiper-button-prev-2',
+        slidesPerView: 3,
         spaceBetween: 30
     },
     {
         selector: '.swiper-3',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-3',
+        next: '.swiper-button-next-3',
+        prev: '.swiper-button-prev-3',
+        slidesPerView: 3,
         spaceBetween: 30
     },
     {
         selector: '.swiper-4',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-4',
+        next: '.swiper-button-next-4',
+        prev: '.swiper-button-prev-4',
+        slidesPerView: 3,
         spaceBetween: 30
     },
     {
         selector: '.swiper-5',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-5',
+        next: '.swiper-button-next-5',
+        prev: '.swiper-button-prev-5',
+        slidesPerView: 3,
         spaceBetween: 30
     },
     {
         selector: '.swiper-6',
-        slidesPerView: 4.5,
+        par: '.swiper-pagination-6',
+        next: '.swiper-button-next-6',
+        prev: '.swiper-button-prev-6',
+        slidesPerView: 3,
         spaceBetween: 30
     }
 ];
@@ -41,15 +59,15 @@ swiperConfigs.forEach(function(config) {
     if (isMobileDevice()) {
         cards = 1;
     } else {
-        cards = 4.5;
+        cards = 3.25;
     }
     
-    
     var swiper = myApp.swiper(config.selector, {
-        pagination: config.selector + ' .swiper-pagination',
+        pagination: config.par,
+        paginationClickable: true,
         navigation: {
-            nextEl: config.selector + ' .swiper-button-next',
-            prevEl: config.selector + ' .swiper-button-prev'
+            nextEl: config.next,
+            prevEl:  config.prev
         },
         spaceBetween: config.spaceBetween,
         slidesPerView: cards,
@@ -57,9 +75,10 @@ swiperConfigs.forEach(function(config) {
         speed: config.speed || 300,
         loop: true,
         loopAdditionalSlides: 30,
+        centeredSlides: true
     });
     
-    fetch('store.steampowered.com/api/appdetails/?appids=1313140', {
+    fetch('http://store.steampowered.com/api/appdetails?appids=1313140', {
         cors: {
             origin: ["https://orczuk.github.io", "http://store.steampowered.com"], methods: "GET,HEAD,PUT,PATCH,DELETE",},
     })
@@ -152,10 +171,13 @@ swiperConfigs.forEach(function(config) {
                         "              </div>");
                 }
             }
+            
         })
         .catch(error => {
             console.log('Error:', error);
         });
+
+    swiper.slideNext();
 });
 
 // Function to check if user is on a mobile device
