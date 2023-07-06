@@ -55,6 +55,17 @@ swiperConfigs.forEach(function(config) {
         loopAdditionalSlides: 30,
     });
 
+    fetch('https://store.steampowered.com/api/appdetails/?appids=1313140')
+        .then(response => response.json())
+        .then(data => {
+            // Process the API response
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle any errors
+            console.error(error);
+        });
+
     // Pulls the data 
     fetch('data.json')
         .then(response => response.json()) // Parse the JSON response

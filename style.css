@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Super Indie';
+    src: url('Font/Super-Indie.ttf') format('truetype');
+}
+
 /*======================================================================================================================
 BANNER CSS
 ======================================================================================================================*/
@@ -8,16 +13,23 @@ BANNER CSS
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Super Indie', sans-serif;
 }
 
 .header {
     margin: 0;
 }
 
+h1 {
+    font-size: 60px; /* Adjust the value as needed */
+    margin: 0.01em 0;
+}
+
 .button-container {
     display: flex;
     gap: 10px;
     margin-right: 10px;
+    align-items: center;
 }
 
 .buttonB {
@@ -39,6 +51,7 @@ Main Page CSS
     overflow-y: scroll;
     /* Additional styles for the content */
     background:radial-gradient(circle,#40658f, #171a21 );
+    margin-top: 0;
 }
 
 /*======================================================================================================================
@@ -48,9 +61,9 @@ Subtitles CSS
 .subtitle {
     color: white;
     font-size: 40px;
-    font-weight: bold;
+    margin: 0.01em 0;
     margin-left: 20px;
-    margin-right: 20px;
+    font-family: 'Super Indie', sans-serif;
     /* Add more styles as needed */
 }
 
@@ -117,11 +130,13 @@ Swiper CSS
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: auto;
 }
 
 .old-price {
     font-size: 0.5em; /* Adjust the size as needed */
     text-decoration: line-through;
+    height: auto;
 }
 
  .button{
