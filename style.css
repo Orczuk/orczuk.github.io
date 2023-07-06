@@ -1,15 +1,30 @@
+/*======================================================================================================================
+Fonts CSS
+======================================================================================================================*/
+
 @font-face {
     font-family: 'Super Indie';
     src: url('Font/Super-Indie.ttf') format('truetype');
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .center-button-container {
+        margin-top: 10px; /* Adjust the value as needed */
+    }
+
+    .button-container {
+        margin-top: 5px; /* Adjust the value as needed */
+    }
 }
 
 /*======================================================================================================================
 BANNER CSS
 ======================================================================================================================*/
 .banner {
-    background-color: #171a21;
+    background-color: #171a21 ;
     color: white;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,6 +40,17 @@ h1 {
     margin: 0.01em 0;
 }
 
+/*======================================================================================================================
+Discord CSS
+======================================================================================================================*/
+
+.header-discord {
+    color: white;
+    font-size: 20px;
+    font-family: 'Super Indie', sans-serif;
+    /* Add more styles as needed */
+}
+
 .button-container {
     display: flex;
     gap: 10px;
@@ -33,15 +59,45 @@ h1 {
 }
 
 .buttonB {
-    background-color: #4CAF50;
+    background-color: #5865f3;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 15px;
     border: none;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Super Indie', sans-serif;
 }
+
+/*======================================================================================================================
+Steam Community Button CSS
+======================================================================================================================*/
+
+.center-button-container{
+    position: absolute;
+    left: 50%;
+    top: 2.5%;
+    z-index: 100;
+}
+
+.buttonImage {
+    background-image: url("https://avatars.akamai.steamstatic.com/af92896d0f91960a1330f9bb2fd3a41409ae126b_full.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4px;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    cursor: pointer; /* Set the mouse cursor to pointer */
+    transition: background-image 0.3s ease-in-out
+}
+
+.buttonImage:hover {
+    filter: brightness(80%);
+}
+
 /*======================================================================================================================
 Main Page CSS
 ======================================================================================================================*/
@@ -88,6 +144,19 @@ Swiper CSS
     text-align:center;
     height: 100%;
 }
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 15px; /* Adjust the bottom value as needed */
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*======================================================================================================================
+Cards CSS
+======================================================================================================================*/
 
 .image{
     height: 60%;
@@ -141,7 +210,7 @@ Swiper CSS
 
  .button{
     width: 100%;
-    height: auto;
+    height: 100%;
     justify-content: space-around;
     outline: none;
     border: none;
@@ -161,7 +230,7 @@ Swiper CSS
     cursor: pointer;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 50px;
 }
 
 .button img {

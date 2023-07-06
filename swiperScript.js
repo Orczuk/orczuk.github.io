@@ -47,6 +47,10 @@ swiperConfigs.forEach(function(config) {
     
     var swiper = myApp.swiper(config.selector, {
         pagination: config.selector + ' .swiper-pagination',
+        navigation: {
+            nextEl: config.selector + ' .swiper-button-next',
+            prevEl: config.selector + ' .swiper-button-prev'
+        },
         spaceBetween: config.spaceBetween,
         slidesPerView: cards,
         direction: config.direction || 'horizontal',
@@ -54,8 +58,11 @@ swiperConfigs.forEach(function(config) {
         loop: true,
         loopAdditionalSlides: 30,
     });
-
-    fetch('https://store.steampowered.com/api/appdetails/?appids=1313140')
+    
+    fetch('store.steampowered.com/api/appdetails/?appids=1313140', {
+        cors: {
+            origin: ["https://orczuk.github.io", "http://store.steampowered.com"], methods: "GET,HEAD,PUT,PATCH,DELETE",},
+    })
         .then(response => response.json())
         .then(data => {
             // Process the API response
